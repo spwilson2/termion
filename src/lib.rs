@@ -15,11 +15,11 @@ extern crate numtoa;
 
 #[cfg(target_os = "redox")]
 #[path="sys/redox/mod.rs"]
-mod sys;
+pub mod sys;
 
 #[cfg(all(unix, not(target_os = "redox")))]
 #[path="sys/unix/mod.rs"]
-mod sys;
+pub mod sys;
 
 pub use sys::size::terminal_size;
 #[cfg(all(unix, not(target_os = "redox")))]
